@@ -11,16 +11,12 @@ public class Integer implements Scalar {
 
     public Scalar add(Scalar s) {
         return s.add(this);}
-
     public Scalar mul(Integer I1){
         return new Integer(this.number*I1.number);}
-
     public Scalar mul(Scalar s){
         return s.mul(this);}
-
     public Scalar neg() {
         return new Integer(this.number * (-1));}
-
     public Scalar power(int exponent){
         int num2 = this.number;
         if (exponent==0){
@@ -33,20 +29,16 @@ public class Integer implements Scalar {
         }
         return new Integer(num2);
     }
-
-
     public int sign(){
         if (this.number==0) return 0;
         if (this.number>0) return 1;
         return -1;}
-
     public boolean equals(Object o){
         if (o instanceof Integer){
             return (this.number == ((Integer)o).number);
         }
         return false;
     }
-
     public String ToString(){
             return ""+this.number;
         }
