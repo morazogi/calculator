@@ -66,10 +66,44 @@ public class Rational implements Scalar {
         }
         return false;
     }
-
     public String ToString(){
         // specific instructions
         //to-do
-        if ()
+        String ans = "";
+        int nomToPrint = this.nomerator;
+        boolean isnomPositive = true;
+        if (nomToPrint < 0) {
+            nomToPrint*=-1;
+            isnomPositive=false;
+        }
+        int denomToPrint = this.denominator;
+        boolean isdenomPositive = true;
+        if (denomToPrint < 0) {
+            denomToPrint*=-1;
+            isdenomPositive=false;
+
+        }
+        for (int i = 2 ; i <= Math.min(nomToPrint,denomToPrint); i++) {
+            if (nomToPrint % i == 0 && denomToPrint % i == 0) {
+                nomToPrint = nomToPrint/i;
+                denomToPrint = denomToPrint/i;
+                i--;
+            }
+        }
+        if (!denomToPrint == 1) {
+            if ((isdenomPositive&isnomPositive)|(!isdenomPositive&!isnomPositive)){
+                ans = ans + nomToPrint + "/" + denomToPrint;
+            } else {
+                ans = ans + "-" + nomToPrint + "/" + denomToPrint;
+            }
+        } else{
+            if ((isdenomPositive&isnomPositive)|(!isdenomPositive&!isnomPositive)){
+                ans = ans + nomToPrint;
+            } else {
+                ans = ans + "-" + nomToPrint;
+            }
+        }
+
+        return ans;
     }
 }
