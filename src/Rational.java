@@ -56,7 +56,6 @@ public class Rational implements Scalar {
         if ((this.nomerator>0&this.denominator>0)||(this.nomerator<0&this.denominator<0)) return 1;
         return -1;
     }
-
     public boolean equals(Object o){
         if (o instanceof Rational){
             return (((this.nomerator == ((Rational)o).nomerator)&
