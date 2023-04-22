@@ -13,7 +13,7 @@ public class Rational implements Scalar {
         return new Rational(this.nomerator *R1.denominator+this.denominator* R1.nomerator,
                             this.denominator+R1.denominator);
     }
-    public Scalar add(Integer I1){
+    public Scalar add(IntegerScalar I1){
         return new Rational(nomerator +denominator*I1.GetNumber(),denominator);
     }
     public Scalar add(Scalar s) {
@@ -24,7 +24,7 @@ public class Rational implements Scalar {
         return new Rational(this.nomerator*R1.nomerator,
                             this.denominator*R1.denominator);
     }
-    public Scalar mul(Integer I1){
+    public Scalar mul(IntegerScalar I1){
         return new Rational(this.nomerator*I1.GetNumber(),this.denominator);
     }
     public Scalar mul(Scalar s){
@@ -89,7 +89,7 @@ public class Rational implements Scalar {
                 i--;
             }
         }
-        if (!denomToPrint == 1) {
+        if (denomToPrint != 1) {
             if ((isdenomPositive&isnomPositive)|(!isdenomPositive&!isnomPositive)){
                 ans = ans + nomToPrint + "/" + denomToPrint;
             } else {
